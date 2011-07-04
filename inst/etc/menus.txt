@@ -1,0 +1,51 @@
+# Some Rcmdr menus for the coin package
+# When the plug-in is loaded, these menus are merged with the standard Rcmdr menus
+
+# last modified:
+# log 2011.07.04_v1.0-20: added menu for Marginal Homogeneity test with variables - Works - by Daniel Leucuta 
+# log 2011.04.27_v1.0-16: erased old menus from RcmdrPlugin.survivalT - Works - by Daniel Leucuta 
+# log 2011.04.26_v1.0-15: added surv_test for survival
+# log 2011.04.03_v1.0-14: added maxstat test for survival
+# log 2011.04.03_v1.0-13: added maxstat test
+# log 2011.03.27_v1.0-10: added Ansary Bradley test menu, enter Table for Marginal Homogeneity test - by Daniel Leucuta 
+# log 2011.03.20_v1.0-9: added Cohrane MH test menu - by Daniel Leucuta 
+# log 2011.03.13: added two-way table. modified in two/k sample permutation test, added function to allow for it - by Daniel Leucuta 
+# log 2011.02.14: shown coin menus paired Wilcox test - by Daniel Leucuta 
+# log 2011.02.14: shown coin menus 2 sample Wilcox test - by Daniel Leucuta
+
+
+#   type    menu/item      operation/parent  label                              command/menu                activation    install?
+menu    coinMenu       topMenu         ""                                      ""                          ""    ""
+item    topMenu         cascade         "Coin"                                 coinMenu                   ""                      ""
+
+menu    coinContingencyTestsMenu       coinMenu         ""                                      ""                          ""    ""
+item    coinMenu         cascade        "Contingency tests"                                 coinContingencyTestsMenu                   ""    ""
+
+item    coinContingencyTestsMenu       command         "Two-way table..."              fncCoinTwoWayTable        "factorsP(2)"    ""
+item    coinContingencyTestsMenu      command         "Cochran-Mantel-Haenzsel test..."      fncCoinCochraneMHTest               "factorsP(3)" ""
+item    coinContingencyTestsMenu      command         "Marginal Homogeneity test..."      fncCoinMHTest               "factorsP(2)" ""
+item    coinContingencyTestsMenu      command         "Enter table for Marginal Homogeneity test..."      enterTableMHTest               "" ""
+
+
+menu    coinIndepTestsMenu       coinMenu         ""                                      ""                          ""    ""
+item    coinMenu         cascade        "Independent Location tests"                                 coinIndepTestsMenu                   ""    ""
+
+
+item    coinIndepTestsMenu       command         "Two-sample Wilcoxon test..."              fncCoinTwoSampleWilcoxonTest        "numericP() && twoLevelFactorsP()"    ""
+item    coinIndepTestsMenu       command         "Median test..."              fncCoinMedianTest        "numericP() && twoLevelFactorsP()"    ""
+item    coinIndepTestsMenu       command         "Normal Quantile test..."              fncCoinNormalTest        "numericP() && twoLevelFactorsP()"    ""
+item    coinIndepTestsMenu       command         "Two/K Sample Permutation Test..."              fncCoinTwoSamplePermutationTest        "numericP() && factorsP()"    ""
+item    coinIndepTestsMenu       command         "Kruskal-Wallis test..."  fncCoinKruskalWallisTest            "numericP() && factorsP()"    ""
+item    coinIndepTestsMenu       command         "Ansari-Bradley test..."              fncCoinAnsariBradleyTest        "numericP() && factorsP()"    ""
+item    coinIndepTestsMenu       command         "Fligner-Killeen test..."              fncCoinFlignerKilleenTest        "numericP() && factorsP()"    ""
+item    coinIndepTestsMenu       command         "Spearman test..."              fncCoinSpearmanTest        "numericP(2)"    ""
+item    coinIndepTestsMenu       command         "Maximally Selected Statistics..."              fncCoinMaxstatTest        "numericP(2)"    ""
+item    coinIndepTestsMenu       command         "Maximally Selected Statistics - survival..."              fncCoinMaxstatSurvTest        "activeDataSetP()"    "packageAvailable('survival')"
+item    coinIndepTestsMenu       command         "Two/K Sample Test for Censored Data..."              fncCoinSurvTest        "activeDataSetP()"    "packageAvailable('survival')"
+
+menu    coinSymetryTestsMenu       coinMenu         ""                                      ""                          ""    ""
+item    coinMenu         cascade        "Symetry tests"                                 coinSymetryTestsMenu                   ""    ""
+
+item    coinSymetryTestsMenu       command         "Paired-samples Wilcoxon test..."  fncCoinPairedWilcoxonTest            "numericP(2)"    ""
+item    coinSymetryTestsMenu       command         "Friedman rank-sum test..."  fncCoinFriedmanTest            "numericP() && factorsP()"    ""
+
