@@ -12,9 +12,9 @@ This package provides an Rcmdr \dQuote{plug-in} based on the coin package for an
 \tabular{ll}{
 Package: \tab RcmdrcoinPlugin\cr
 Type: \tab Package\cr
-Version: \tab 1.0-20\cr
-Date: \tab 2011-07-04\cr
-License: \tab GPL version 2 or newer\cr
+Version: \tab 1.0-21\cr
+Date: \tab 2012-10-29\cr
+License: \tab GPL (>= 2)\cr
 }
 }
 

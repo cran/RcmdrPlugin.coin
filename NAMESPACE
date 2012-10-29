@@ -1,13 +1,10 @@
-# Default NAMESPACE created by R
-# Remove the previous line if you edit this file
+# Mannualy edited.
 
-# Export all names
-exportPattern(".")
+# Export all names that don't start with .
+exportPattern("^[^\\.]")
 
-# Import all packages listed as Imports or Depends
-import(
-  Rcmdr,
+# Import all packages listed as Imports and others
+import(Rcmdr,
   coin,
   survival,
-  multcomp
-)
+  multcomp)
