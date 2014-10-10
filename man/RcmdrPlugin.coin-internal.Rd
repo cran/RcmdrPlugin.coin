@@ -7,6 +7,7 @@
 \alias{fncCoinTwoSamplePermutationTest}
 \alias{fncCoinKruskalWallisTest}
 \alias{fncCoinFriedmanTest}
+\alias{fncCoinSymmetryTest}
 \alias{fncCoinTwoWayTable}
 \alias{fncCoinCochraneMHTest}
 \alias{fncCoinAnsariBradleyTest}
@@ -16,6 +17,7 @@
 \alias{fncCoinMaxstatSurvTest}
 \alias{fncCoinSurvTest}
 \alias{enterTableMHTest}
+\alias{resetenterTableMHTest}
 \alias{fncCoinMHTest}
 \alias{NumericOrDate}
 \alias{startStop}

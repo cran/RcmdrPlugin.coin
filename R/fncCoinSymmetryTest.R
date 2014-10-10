@@ -1,6 +1,6 @@
-fncCoinFriedmanTest <- function(){
+fncCoinSymmetryTest <- function(){
   #Library("multcomp")
-  initializeDialog(title=gettextRcmdr("Friedman rank-sum Test"))
+  initializeDialog(title=gettextRcmdr("Symmetry Test"))
   variablesFrame <- tkframe(top) #
   groupBox <- variableListBox(variablesFrame, Factors(), title=gettextRcmdr("Groups\n(select one)"))
   responseBox <- variableListBox(variablesFrame, Numeric(), title=gettextRcmdr("Response Variable\n(select one)"))
@@ -9,18 +9,18 @@ fncCoinFriedmanTest <- function(){
   onOK <- function(){
     group <- getSelection(groupBox)
     if (length(group) == 0) {
-      errorCondition(recall=fncCoinFriedmanTest, message=gettextRcmdr("You must select a groups variable."))
+      errorCondition(recall=fncCoinSymmetryTest, message=gettextRcmdr("You must select a groups variable."))
       return()
     }
     response <- getSelection(responseBox)
     if (length(response) == 0) {
-      errorCondition(recall=fncCoinFriedmanTest, message=gettextRcmdr("You must select a response variable."))
+      errorCondition(recall=fncCoinSymmetryTest, message=gettextRcmdr("You must select a response variable."))
       return()
     }
     strBlock <- getSelection(blockBox) #
     if (length(strBlock) > 0) {
       if (strBlock == group) {
-        errorCondition(recall=fncCoinFriedmanTest, message=gettextRcmdr("The group and block variables must be different."))
+        errorCondition(recall=fncCoinSymmetryTest, message=gettextRcmdr("The group and block variables must be different."))
         return()
       }
       strLineBlock = paste(" | ", strBlock, " ", sep="") #
@@ -45,16 +45,19 @@ fncCoinFriedmanTest <- function(){
                        ", ", paste(.activeDataSet,"$", group, sep=""), ", median, na.rm=TRUE)", sep=""))
     
     if (test == "default"){
-      doItAndPrint(paste("friedman_test(", response, " ~ ", group, strLineBlock, ", data=", .activeDataSet, subset, ")", sep=""))           
+      doItAndPrint(paste("symmetry_test(", response, " ~ ", group, strLineBlock, ", data=", .activeDataSet, subset, ")", sep=""))           
+    } else if (test == "exact"){
+      doItAndPrint(paste("symmetry_test(", response, " ~ ", group, strLineBlock, ", data=", .activeDataSet, subset, 
+                         ", distribution='exact')", sep=""))   
     } else if (test == "asympt"){
-      doItAndPrint(paste("friedman_test(", response, " ~ ", group, strLineBlock, ", data=", .activeDataSet, subset, 
+      doItAndPrint(paste("symmetry_test(", response, " ~ ", group, strLineBlock, ", data=", .activeDataSet, subset, 
                          ", distribution=asymptotic(maxpts = ", maxpts, ", abseps = ", abseps, ", releps = ", releps, " ) )", sep=""))
     } else {
-      doItAndPrint(paste("friedman_test(", response, " ~ ", group, strLineBlock, ", data=", .activeDataSet, subset, 
+      doItAndPrint(paste("symmetry_test(", response, " ~ ", group, strLineBlock, ", data=", .activeDataSet, subset, 
                          ", distribution=approximate(B = ", replications, " ) )", sep=""))
     }
     
-    #doItAndPrint(paste("friedman_test(", response, " ~ ", group, block, ", data=", .activeDataSet, subset, ")", sep=""))
+    #doItAndPrint(paste("symmetry_test(", response, " ~ ", group, block, ", data=", .activeDataSet, subset, ")", sep=""))
     
     # code from coin package examples:
     ### Wilcoxon-Nemenyi-McDonald-Thompson test
@@ -81,12 +84,12 @@ fncCoinFriedmanTest <- function(){
     
     tkfocus(CommanderWindow())
   }
-  OKCancelHelp(helpSubject="friedman_test")
+  OKCancelHelp(helpSubject="symmetry_test")
   
   optionsFrame <- tkframe(top) #
   
-  radioButtons(optionsFrame, name="test", buttons=c("default", "asympt", "approx"), 
-               labels=c("Default", "Asymptotic", "Approximate"), 
+  radioButtons(optionsFrame, name="test", buttons=c("default", "asympt", "approx", "exact"), 
+               labels=c("Default", "Asymptotic", "Approximate", "Exact"), 
                title=gettextRcmdr("Type of Test"))
   
   distributionsFrame <- tkframe(top)

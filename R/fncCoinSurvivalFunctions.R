@@ -13,7 +13,7 @@ startStop <- function(time){#copied from John Fox's R-RcmdrPlugin.survival, need
 }
 
 fncCoinMaxstatSurvTest <- function(){#based on R-RcmdrPlugin.survival, survdif, and it is interlinked in this way with survival data definition
-  require(survival)
+  #require(survival)
   if (!activeDataSetP()) return()
   currentModel <- FALSE
   initializeDialog(title=gettext("Maximally Selected Statistics Test for Survival data"))#, domain="R-RcmdrPlugin.survival"
@@ -103,7 +103,7 @@ fncCoinMaxstatSurvTest <- function(){#based on R-RcmdrPlugin.survival, survdif, 
 }
 
 fncCoinSurvTest <- function(){#based on R-RcmdrPlugin.survival, survdif, and it is interlinked in this way with survival data definition
-  require(survival)
+  #require(survival)
   if (!activeDataSetP()) return()
   currentModel <- FALSE
   initializeDialog(title=gettext("Independent Two/K Sample Test for Censored Data..."))#, domain="R-RcmdrPlugin.survival"

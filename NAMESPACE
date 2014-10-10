@@ -1,4 +1,4 @@
-# Mannualy edited.
+# Mannualy edited.  , tkdestroy, tkframe, ttkentry, tkgrid, tkscale
 
 # Export all names that don't start with .
 exportPattern("^[^\\.]")
@@ -8,3 +8,5 @@ import(Rcmdr,
   coin,
   survival,
   multcomp)
+  
+importFrom(tcltk, ttknotebook, tkadd, tkselect, ttklabel, tkbutton)

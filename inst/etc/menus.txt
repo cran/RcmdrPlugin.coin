@@ -44,8 +44,9 @@ item    coinIndepTestsMenu       command         "Maximally Selected Statistics 
 item    coinIndepTestsMenu       command         "Two/K Sample Test for Censored Data..."              fncCoinSurvTest        "activeDataSetP()"    "packageAvailable('survival')"
 
 menu    coinSymetryTestsMenu       coinMenu         ""                                      ""                          ""    ""
-item    coinMenu         cascade        "Symetry tests"                                 coinSymetryTestsMenu                   ""    ""
+item    coinMenu         cascade        "Symmetry tests"                                 coinSymetryTestsMenu                   ""    ""
 
 item    coinSymetryTestsMenu       command         "Paired-samples Wilcoxon test..."  fncCoinPairedWilcoxonTest            "numericP(2)"    ""
 item    coinSymetryTestsMenu       command         "Friedman rank-sum test..."  fncCoinFriedmanTest            "numericP() && factorsP()"    ""
+item    coinSymetryTestsMenu       command         "Symmetry test..."  fncCoinSymmetryTest            "numericP() && factorsP()"    ""
 

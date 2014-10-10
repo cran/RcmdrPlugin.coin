@@ -1,5 +1,5 @@
 fncCoinKruskalWallisTest <- function(){
-  Library("multcomp")
+  #Library("multcomp")
   initializeDialog(title=gettextRcmdr("Kruskal-Wallis Test"))
   variablesFrame <- tkframe(top) #
   groupBox <- variableListBox(variablesFrame, Factors(), title=gettextRcmdr("Groups\n(select one)"))

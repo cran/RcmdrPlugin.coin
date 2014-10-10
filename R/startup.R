@@ -6,7 +6,7 @@
 # Check dataset whitout factors see error for block? - seems ok
 
 ###### Last modified: 
-# log 2012.10.29_v1.0-21: broken into smaller files. replaced with onatach. added namespace
+# log 2012.10.29_v1.0-21: broken into smaller files. replaced with onatach. modified namespace. added adjusted p-values for crosstabs for residuals
 # log 2011.07.04_v1.0-20: all recalls verified, all help buttons checked. Added Marginal Homogeneity test for variables (not by enter table),replaced pick with select use \n for titles, fixed ansary,fligner to work with ties. added surv test distributions - Works - by Daniel Leucuta 
 # log 2011.07.04_v1.0-19: Kruskal Walis added distribution options, Added zero.method for 2 sample Wilcox test - Works - by Daniel Leucuta 
 # log 2011.06.18_v1.0-18: modified multiple comparison for friedman test, and Kruskal Walis so that pairwise tests works - Works - by Daniel Leucuta 

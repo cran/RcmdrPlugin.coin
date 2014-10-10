@@ -12,8 +12,8 @@ This package provides an Rcmdr \dQuote{plug-in} based on the coin package for an
 \tabular{ll}{
 Package: \tab RcmdrcoinPlugin\cr
 Type: \tab Package\cr
-Version: \tab 1.0-21\cr
-Date: \tab 2012-10-29\cr
+Version: \tab 1.0-22\cr
+Date: \tab 2014-10-13\cr
 License: \tab GPL (>= 2)\cr
 }
 }
@@ -27,4 +27,9 @@ Maintainer: Daniel-Corneliu Leucuta <danny.ldc@gmail.com>
 \keyword{ package }
 \seealso{
 \code{\link[Rcmdr]{Rcmdr}}.
+}
+
+\examples{ 
+data(alzheimer, package="coin")
+lbl_test(xtabs(~gender+disease, data=alzheimer))
 }

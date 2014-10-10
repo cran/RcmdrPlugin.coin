@@ -1,0 +1,11 @@
+Changes to Version 1.0-22
+
+  o added symmetry_test
+  
+  o modified code to remove the notes in the CRAN check
+
+Changes to Version 1.0-21
+
+  o Added for crosstabs the option of: p-values adjusted for multiple testing by a single-step max-T multiple testing approach.
+  
+  o Replaced .firs.lib with .onAttach
