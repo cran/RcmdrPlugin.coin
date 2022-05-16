@@ -1,6 +1,6 @@
-317c73d438beecf23a29c5185cb89544 *DESCRIPTION
-81b242c6c2de10d76b1558681951f3cb *NAMESPACE
-1d69b9445427481b2ab70c9b62dc7a3b *NEWS
+5b570667c4c2c3fdee0283d5fed57634 *DESCRIPTION
+72423268aadc4a349d8114887e1df366 *NAMESPACE
+72b9fdf4e86824c38cfe3e3a506019bf *NEWS
 d41d8cd98f00b204e9800998ecf8427e *R/RcmdrPlugin.coin.R
 da04d9ca185f0c8dab376a0551740f78 *R/fncCoinAnsariBradleyTest.R
 648c41d510d244e2e50c1a37bc73593b *R/fncCoinCochraneMHTest.R
@@ -22,4 +22,4 @@ c55c07c2e5844658f1a62259476153e9 *R/fncCoinTwoWayTable.R
 3f1c2b8a260adeb4f6784f9e970f2c11 *R/startup.R
 acfec5df0d2b2f694844ddc8535f1bfd *inst/etc/menus.txt
 13c6566c6a52ed41b97706d5a7b04f19 *man/RcmdrPlugin.coin-internal.Rd
-db0a5bc4b1b36a42385a4e2982c91813 *man/RcmdrPlugin.coin-package.Rd
+e776f2a50c7968c285b329b2ab463998 *man/RcmdrPlugin.coin-package.Rd

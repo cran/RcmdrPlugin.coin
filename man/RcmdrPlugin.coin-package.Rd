@@ -6,14 +6,14 @@
 Install the coin Rcmdr Plug-In
 }
 \description{
-This package provides an Rcmdr \dQuote{plug-in} based on the coin package for an easier access to the coin package functions.
+Rcmdr GUI extension \dQuote{plug-in} based on the coin package for an easier access to the coin package functions.
 }
 \details{
 \tabular{ll}{
 Package: \tab RcmdrcoinPlugin\cr
 Type: \tab Package\cr
-Version: \tab 1.0-22\cr
-Date: \tab 2014-10-13\cr
+Version: \tab 1.0-23\cr
+Date: \tab 2022-05-15\cr
 License: \tab GPL (>= 2)\cr
 }
 }

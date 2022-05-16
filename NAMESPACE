@@ -10,3 +10,4 @@ import(Rcmdr,
   multcomp)
   
 importFrom(tcltk, ttknotebook, tkadd, tkselect, ttklabel, tkbutton)
+importFrom("stats", "na.omit")

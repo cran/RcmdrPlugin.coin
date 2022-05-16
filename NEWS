@@ -9,3 +9,7 @@ Changes to Version 1.0-21
   o Added for crosstabs the option of: p-values adjusted for multiple testing by a single-step max-T multiple testing approach.
   
   o Replaced .firs.lib with .onAttach
+
+Changes to Version 1.0-23
+
+  o Resolved NOTE problem on CRAN server check
